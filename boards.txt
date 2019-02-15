@@ -4,7 +4,7 @@ menu.cpu=Processor
 
 ##############################################################
 
-yun.name=Arduino Yún
+yun.name=Arduino Yún w/ XInput
 yun.upload.via_ssh=true
 
 yun.vid.0=0x2341
@@ -46,7 +46,7 @@ yun.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-leonardo.name=Arduino Leonardo
+leonardo.name=Arduino Leonardo w/ XInput
 leonardo.vid.0=0x2341
 leonardo.pid.0=0x0036
 leonardo.vid.1=0x2341
@@ -85,7 +85,7 @@ leonardo.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-leonardoeth.name=Arduino Leonardo ETH
+leonardoeth.name=Arduino Leonardo ETH w/ XInput
 leonardoeth.vid.0=0x2a03
 leonardoeth.pid.0=0x0040
 leonardoeth.vid.1=0x2a03
@@ -120,7 +120,7 @@ leonardoeth.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-micro.name=Arduino/Genuino Micro
+micro.name=Arduino/Genuino Micro w/ XInput
 
 micro.vid.0=0x2341
 micro.pid.0=0x0037
@@ -178,7 +178,7 @@ micro.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-esplora.name=Arduino Esplora
+esplora.name=Arduino Esplora w/ XInput
 esplora.vid.0=0x2341
 esplora.pid.0=0x003C
 esplora.vid.1=0x2341
@@ -217,7 +217,7 @@ esplora.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-LilyPadUSB.name=LilyPad Arduino USB
+LilyPadUSB.name=LilyPad Arduino USB w/ XInput
 LilyPadUSB.vid.0=0x1B4F
 LilyPadUSB.pid.0=0x9207
 LilyPadUSB.vid.1=0x1B4F
@@ -252,7 +252,7 @@ LilyPadUSB.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-robotControl.name=Arduino Robot Control
+robotControl.name=Arduino Robot Control w/ XInput
 robotControl.vid.0=0x2341
 robotControl.pid.0=0x0038
 robotControl.vid.1=0x2341
@@ -291,7 +291,7 @@ robotControl.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-robotMotor.name=Arduino Robot Motor
+robotMotor.name=Arduino Robot Motor w/ XInput
 robotMotor.vid.0=0x2341
 robotMotor.pid.0=0x0039
 robotMotor.vid.1=0x2341
@@ -330,7 +330,7 @@ robotMotor.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-# Adafruit Circuit Playground 32u4 w/Caterina Configuration
+# Adafruit Circuit Playground 32u4 w/Caterina Configuration w/ XInput
 circuitplay32u4cat.name=Adafruit Circuit Playground
 circuitplay32u4cat.bootloader.low_fuses=0xff
 circuitplay32u4cat.bootloader.high_fuses=0xd8
@@ -361,7 +361,7 @@ circuitplay32u4cat.pid.0=0x8011
 
 ##############################################################
 
-yunmini.name=Arduino Yún Mini
+yunmini.name=Arduino Yún Mini w/ XInput
 yunmini.upload.via_ssh=true
 
 yunmini.vid.0=0x2a03
@@ -398,7 +398,7 @@ yunmini.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-chiwawa.name=Arduino Industrial 101
+chiwawa.name=Arduino Industrial 101 w/ XInput
 chiwawa.upload.via_ssh=true
 
 chiwawa.vid.0=0x2a03
@@ -435,7 +435,7 @@ chiwawa.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-one.name=Linino One
+one.name=Linino One w/ XInput
 one.upload.via_ssh=true
 
 one.vid.0=0x2a03
