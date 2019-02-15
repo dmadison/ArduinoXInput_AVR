@@ -16,7 +16,7 @@
    SOFTWARE.
  */
 
-#define PLUGGABLE_USB_ENABLED
+// #define PLUGGABLE_USB_ENABLED  // Not compatible with XInput
 
 #if defined(EPRST6)
 #define USB_ENDPOINTS 7 // AtMegaxxU4
