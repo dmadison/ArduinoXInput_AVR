@@ -163,23 +163,6 @@ typedef struct
 
 //================================================================================
 //================================================================================
-//	MSC 'Driver'
-
-int		MSC_GetInterface(uint8_t* interfaceNum);
-int		MSC_GetDescriptor(int i);
-bool	MSC_Setup(USBSetup& setup);
-bool	MSC_Data(uint8_t rx,uint8_t tx);
-
-//================================================================================
-//================================================================================
-//	CSC 'Driver'
-
-int		CDC_GetInterface(uint8_t* interfaceNum);
-int		CDC_GetDescriptor(int i);
-bool	CDC_Setup(USBSetup& setup);
-
-//================================================================================
-//================================================================================
 
 #define TRANSFER_PGM		0x80
 #define TRANSFER_RELEASE	0x40

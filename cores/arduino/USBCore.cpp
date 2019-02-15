@@ -327,12 +327,10 @@ int USB_Send(u8 ep, const void* d, int len)
 
 u8 _initEndpoints[USB_ENDPOINTS] =
 {
-	0,                      // Control Endpoint
-	
-	EP_TYPE_INTERRUPT_IN,   // CDC_ENDPOINT_ACM
-	EP_TYPE_BULK_OUT,       // CDC_ENDPOINT_OUT
-	EP_TYPE_BULK_IN,        // CDC_ENDPOINT_IN
-
+	0,                         // Control Endpoint
+	// EP_TYPE_INTERRUPT_IN,   // CDC_ENDPOINT_ACM
+	// EP_TYPE_BULK_OUT,       // CDC_ENDPOINT_OUT
+	// EP_TYPE_BULK_IN,        // CDC_ENDPOINT_IN
 	// Following endpoints are automatically initialized to 0
 };
 
@@ -367,21 +365,6 @@ void InitEndpoints()
 	}
 	UERST = 0x7E;	// And reset them
 	UERST = 0;
-}
-
-//	Handle CLASS_INTERFACE requests
-static
-bool ClassInterfaceRequest(USBSetup& setup)
-{
-	u8 i = setup.wIndex;
-
-	if (CDC_ACM_INTERFACE == i)
-		return CDC_Setup(setup);
-
-#ifdef PLUGGABLE_USB_ENABLED
-	return PluggableUSB().setup(setup);
-#endif
-	return false;
 }
 
 static int _cmark;
@@ -462,34 +445,14 @@ int USB_RecvControl(void* d, int len)
 	return len;
 }
 
-static u8 SendInterfaces()
-{
-	u8 interfaces = 0;
-
-	CDC_GetInterface(&interfaces);
-
-#ifdef PLUGGABLE_USB_ENABLED
-	PluggableUSB().getInterface(&interfaces);
-#endif
-
-	return interfaces;
-}
-
 //	Construct a dynamic configuration descriptor
 //	This really needs dynamic endpoint allocation etc
 //	TODO
 static
 bool SendConfiguration(int maxlen)
 {
-	//	Count and measure interfaces
-	InitControl(0);
-	u8 interfaces = SendInterfaces();
-	ConfigDescriptor config = D_CONFIG(_cmark + sizeof(ConfigDescriptor),interfaces);
-
-	//	Now send them
-	InitControl(maxlen);
-	USB_SendControl(0,&config,sizeof(ConfigDescriptor));
-	SendInterfaces();
+	// InitControl(maxlen);
+	// USB_SendControl( * Config Descriptor Here * );
 	return true;
 }
 
@@ -632,8 +595,7 @@ ISR(USB_COM_vect)
 	}
 	else
 	{
-		InitControl(setup.wLength);		//	Max length of transfer
-		ok = ClassInterfaceRequest(setup);
+		ok = true;
 	}
 
 	if (ok)
@@ -754,8 +716,6 @@ ISR(USB_GEN_vect)
 	//	Start of Frame - happens every millisecond so we use it for TX and RX LED one-shot timing, too
 	if (udint & (1<<SOFI))
 	{
-		USB_Flush(CDC_TX);				// Send a tx frame if found
-		
 		// check whether the one-shot period has elapsed.  if so, turn off the LED
 		if (TxLEDPulse && !(--TxLEDPulse))
 			TXLED0;
