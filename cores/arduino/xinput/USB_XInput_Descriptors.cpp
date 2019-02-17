@@ -204,4 +204,7 @@ const u8 USB_ConfigDescriptor[] = {
 
 const u16 USB_ConfigDescriptorSize = sizeof(USB_ConfigDescriptor);
 
+const u8 STRING_SERIAL[] = "Arduino XInput AVR";
+const u8 STRING_SECURITY[] = "Xbox Security Method 3, Version 1.00, \xA9 2005 Microsoft Corporation. All rights reserved.";
+
 #endif /* if defined(USBCON) */

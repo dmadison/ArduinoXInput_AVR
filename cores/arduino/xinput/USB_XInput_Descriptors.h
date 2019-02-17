@@ -31,9 +31,18 @@
 
 #if defined(USBCON)
 
+// Device Descriptor
 extern const DeviceDescriptor USB_DeviceDescriptor PROGMEM;
+
+// Config Descriptor
 extern const u8  USB_ConfigDescriptor[] PROGMEM;
 extern const u16 USB_ConfigDescriptorSize PROGMEM;
+
+// String Descriptors
+extern const u8 STRING_SERIAL[] PROGMEM;
+extern const u8 STRING_SECURITY[] PROGMEM;
+
+#define ISECURITY 4
 
 #undef USB_VID
 #define USB_VID 0x045E

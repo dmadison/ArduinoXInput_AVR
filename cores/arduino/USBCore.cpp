@@ -484,7 +484,12 @@ bool SendDescriptor(USBSetup& setup)
 			char name[ISERIAL_MAX_LEN];
 			PluggableUSB().getShortName(name);
 			return USB_SendStringDescriptor((uint8_t*)name, strlen(name), 0);
+#else
+			return USB_SendStringDescriptor(STRING_SERIAL, strlen((char*)STRING_SERIAL), TRANSFER_PGM);
 #endif
+		}
+		else if (setup.wValueL == ISECURITY) {
+			return USB_SendStringDescriptor(STRING_SECURITY, strlen((char*)STRING_SECURITY), TRANSFER_PGM);
 		}
 		else
 			return false;
