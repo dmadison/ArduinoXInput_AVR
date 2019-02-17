@@ -34,7 +34,6 @@ volatile u8 RxLEDPulse; /**< Milliseconds remaining for data Rx LED pulse */
 extern const u16 STRING_LANGUAGE[] PROGMEM;
 extern const u8 STRING_PRODUCT[] PROGMEM;
 extern const u8 STRING_MANUFACTURER[] PROGMEM;
-extern const DeviceDescriptor USB_DeviceDescriptorIAD PROGMEM;
 
 const u16 STRING_LANGUAGE[2] = {
 	(3<<8) | (2+2),
@@ -64,13 +63,6 @@ const u8 STRING_PRODUCT[] PROGMEM = USB_PRODUCT;
 #endif
 
 const u8 STRING_MANUFACTURER[] PROGMEM = USB_MANUFACTURER;
-
-
-#define DEVICE_CLASS 0x02
-
-//	DEVICE DESCRIPTOR
-const DeviceDescriptor USB_DeviceDescriptorIAD =
-	D_DEVICE(0xEF,0x02,0x01,64,USB_VID,USB_PID,0x100,IMANUFACTURER,IPRODUCT,ISERIAL,1);
 
 //==================================================================
 //==================================================================
@@ -451,8 +443,8 @@ int USB_RecvControl(void* d, int len)
 static
 bool SendConfiguration(int maxlen)
 {
-	// InitControl(maxlen);
-	// USB_SendControl( * Config Descriptor Here * );
+	InitControl(maxlen);
+	USB_SendControl(TRANSFER_PGM, &USB_ConfigDescriptor, USB_ConfigDescriptorSize);
 	return true;
 }
 
@@ -474,7 +466,7 @@ bool SendDescriptor(USBSetup& setup)
 	const u8* desc_addr = 0;
 	if (USB_DEVICE_DESCRIPTOR_TYPE == t)
 	{
-		desc_addr = (const u8*)&USB_DeviceDescriptorIAD;
+		desc_addr = (const u8*) &USB_DeviceDescriptor;
 	}
 	else if (USB_STRING_DESCRIPTOR_TYPE == t)
 	{
