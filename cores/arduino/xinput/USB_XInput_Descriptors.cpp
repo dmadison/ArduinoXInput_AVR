@@ -75,7 +75,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x81,        // bEndpointAddress (IN, 1)
 	0x14,        // bMaxDataSize
 	0x00, 0x00, 0x00, 0x00, 0x13,  // ???
-	0x01,        // bEndpointAddress (OUT, 1)
+	0x02,        // bEndpointAddress (OUT, 2)
 	0x08,        // bMaxDataSize
 	0x00, 0x00,  // ???
 
@@ -90,7 +90,7 @@ const u8 USB_ConfigDescriptor[] = {
 	// Endpoint 1: Control Data In
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
-	0x01,        // bEndpointAddress (OUT, 1)
+	0x02,        // bEndpointAddress (OUT, 2)
 	0x03,        // bmAttributes
 	0x20, 0x00,  // wMaxPacketSize
 	0x08,        // bInterval
@@ -111,23 +111,23 @@ const u8 USB_ConfigDescriptor[] = {
 	0x1B,        // bLength
 	0x21,        // bDescriptorType
 	0x00, 0x01, 0x01, 0x01,  // ???
-	0x82,        // bEndpointAddress (IN, 2)
+	0x83,        // bEndpointAddress (IN, 3)
 	0x40,        // bMaxDataSize
 	0x01,        // ???
-	0x02,        // bEndpointAddress (OUT, 2)
+	0x04,        // bEndpointAddress (OUT, 4)
 	0x20,        // bMaxDataSize
 	0x16,        // ???
-	0x83,        // bEndpointAddress (IN, 3)
+	0x85,        // bEndpointAddress (IN, 5)
 	0x00,        // bMaxDataSize
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x16,  // ???
-	0x03,        // bEndpointAddress (OUT, 3)
+	0x05,        // bEndpointAddress (OUT, 5)
 	0x00,        // bMaxDataSize
 	0x00, 0x00, 0x00, 0x00, 0x00,  // ???
 
 	// Endpoint 2: Microphone Data Out
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
-	0x82,        // bEndpointAddress (IN, 2)
+	0x83,        // bEndpointAddress (IN, 3)
 	0x03,        // bmAttributes
 	0x20, 0x00,  // wMaxPacketSize
 	0x02,        // bInterval
@@ -135,7 +135,7 @@ const u8 USB_ConfigDescriptor[] = {
 	// Endpoint 2: Headset Audio In
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
-	0x02,        // bEndpointAddress (OUT, 2)
+	0x04,        // bEndpointAddress (OUT, 4)
 	0x03,        // bmAttributes
 	0x20, 0x00,  // wMaxPacketSize
 	0x04,        // bInterval
@@ -143,7 +143,7 @@ const u8 USB_ConfigDescriptor[] = {
 	// Endpoint 3: Unknown, Out
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
-	0x83,        // bEndpointAddress (IN, 3)
+	0x85,        // bEndpointAddress (IN, 5)
 	0x03,        // bmAttributes
 	0x20, 0x00,  // wMaxPacketSize
 	0x40,        // bInterval
@@ -151,7 +151,7 @@ const u8 USB_ConfigDescriptor[] = {
 	// Endpoint 3: Unknown, In
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
-	0x03,        // bEndpointAddress (OUT, 3)
+	0x05,        // bEndpointAddress (OUT, 5)
 	0x03,        // bmAttributes
 	0x20, 0x00,  // wMaxPacketSize
 	0x10,        // bInterval
@@ -172,14 +172,14 @@ const u8 USB_ConfigDescriptor[] = {
 	0x09,        // bLength
 	0x21,        // bDescriptorType
 	0x00, 0x01, 0x01, 0x22,  // ???
-	0x84,        // bEndpointAddress (IN, 4)
+	0x86,        // bEndpointAddress (IN, 6)
 	0x07,        // bMaxDataSize
 	0x00,        // ???
 
 	// Endpoint 4: Unknown, Out
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
-	0x84,        // bEndpointAddress (IN, 4)
+	0x86,        // bEndpointAddress (IN, 6)
 	0x03,        // bmAttributes
 	0x20, 0x00,  // wMaxPacketSize
 	0x10,        // bInterval
