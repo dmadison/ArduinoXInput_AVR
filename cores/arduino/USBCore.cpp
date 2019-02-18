@@ -317,46 +317,49 @@ int USB_Send(u8 ep, const void* d, int len)
 	return r;
 }
 
-u8 _initEndpoints[USB_ENDPOINTS] =
-{
-	0,                         // Control Endpoint
-	// EP_TYPE_INTERRUPT_IN,   // CDC_ENDPOINT_ACM
-	// EP_TYPE_BULK_OUT,       // CDC_ENDPOINT_OUT
-	// EP_TYPE_BULK_IN,        // CDC_ENDPOINT_IN
-	// Following endpoints are automatically initialized to 0
-};
-
 #define EP_SINGLE_64 0x32	// EP0
 #define EP_DOUBLE_64 0x36	// Other endpoints
 #define EP_SINGLE_16 0x12
 
-static
+static inline
+u8 BankSizeMask(const uint8_t nbytes)
+{
+	uint8_t mask = 0;
+	for (uint8_t size = 8; size < 64; size <<= 1) {
+		if (nbytes <= size) break;
+		mask++;
+	}
+
+	return (mask << EPSIZE0);
+}
+
+static inline
 void InitEP(u8 index, u8 type, u8 size)
 {
-	UENUM = index;
-	UECONX = (1<<EPEN);
-	UECFG0X = type;
-	UECFG1X = size;
+	UENUM = index;       // Select endpoint
+	UECONX = (1<<EPEN);  // Enable endpoint
+	UECFG0X = type;      // Direction and transmission type
+	UECFG1X = size;      // Memory allocation, # of data banks, and bank size
+}
+
+static inline
+bool InitEPSize(const u8 index, const u8 type, const u8 nbanks, const u8 banksize)
+{
+	if (index >= USB_ENDPOINTS) return false;
+	uint8_t size = ((1 << ALLOC) | ((nbanks > 1) ? (1 << EPBK0) : 0) | BankSizeMask(banksize));
+	InitEP(index, type, size);
+	return UESTA0X & (1 << CFGOK);  // Success
 }
 
 static
 void InitEndpoints()
 {
-	for (u8 i = 1; i < sizeof(_initEndpoints) && _initEndpoints[i] != 0; i++)
-	{
-		UENUM = i;
-		UECONX = (1<<EPEN);
-		UECFG0X = _initEndpoints[i];
-#if USB_EP_SIZE == 16
-		UECFG1X = EP_SINGLE_16;
-#elif USB_EP_SIZE == 64
-		UECFG1X = EP_DOUBLE_64;
-#else
-#error Unsupported value for USB_EP_SIZE
-#endif
-	}
-	UERST = 0x7E;	// And reset them
-	UERST = 0;
+	InitEPSize(1, EP_TYPE_INTERRUPT_IN,  1, 32);  // Control Data Send
+	InitEPSize(2, EP_TYPE_INTERRUPT_OUT, 1, 32);  // Control Data Receive
+	InitEPSize(5, EP_TYPE_INTERRUPT_IN,  1, 32);  // Expansion Interface NACK (avoid config reset)
+
+	UERST = 0x7E;  // Reset endpoints
+	UERST = 0;     // End reset
 }
 
 static int _cmark;
