@@ -48,12 +48,6 @@ extern const u8 STRING_SECURITY[] PROGMEM;
 #define XINPUT_TX_ENDPOINT	1
 #define XINPUT_RX_ENDPOINT	2
 
-#undef USB_VID
-#define USB_VID 0x045E
-
-#undef USB_PID
-#define USB_PID 0x028E
-
 #endif /* if defined(USBCON) */
 
 #endif /* ifndef USB_XINPUT_DESCRIPTORS_H */
