@@ -44,6 +44,10 @@ extern const u8 STRING_SECURITY[] PROGMEM;
 
 #define ISECURITY 4
 
+// Endpoint Numbers
+#define XINPUT_TX_ENDPOINT	1
+#define XINPUT_RX_ENDPOINT	2
+
 #undef USB_VID
 #define USB_VID 0x045E
 
