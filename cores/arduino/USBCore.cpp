@@ -355,7 +355,7 @@ static
 void InitEndpoints()
 {
 	InitEPSize(XINPUT_TX_ENDPOINT, EP_TYPE_INTERRUPT_IN,  1, 32);  // Control Data Send
-	InitEPSize(XINPUT_RX_ENDPOINT, EP_TYPE_INTERRUPT_OUT, 1, 32);  // Control Data Receive
+	InitEPSize(XINPUT_RX_ENDPOINT, EP_TYPE_INTERRUPT_OUT, 2, 32);  // Control Data Receive
 	InitEPSize(5, EP_TYPE_INTERRUPT_IN,  1, 32);  // Expansion Interface NACK (avoid config reset)
 
 	UERST = 0x7E;  // Reset endpoints
