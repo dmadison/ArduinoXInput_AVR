@@ -354,8 +354,8 @@ bool InitEPSize(const u8 index, const u8 type, const u8 nbanks, const u8 banksiz
 static
 void InitEndpoints()
 {
-	InitEPSize(1, EP_TYPE_INTERRUPT_IN,  1, 32);  // Control Data Send
-	InitEPSize(2, EP_TYPE_INTERRUPT_OUT, 1, 32);  // Control Data Receive
+	InitEPSize(XINPUT_TX_ENDPOINT, EP_TYPE_INTERRUPT_IN,  1, 32);  // Control Data Send
+	InitEPSize(XINPUT_RX_ENDPOINT, EP_TYPE_INTERRUPT_OUT, 1, 32);  // Control Data Receive
 	InitEPSize(5, EP_TYPE_INTERRUPT_IN,  1, 32);  // Expansion Interface NACK (avoid config reset)
 
 	UERST = 0x7E;  // Reset endpoints
