@@ -360,6 +360,9 @@ void InitEndpoints()
 
 	UERST = 0x7E;  // Reset endpoints
 	UERST = 0;     // End reset
+
+	SetEP(XINPUT_RX_ENDPOINT);  // Select XInput RX endpoint (OUT)
+	UEIENX |= (1 << RXOUTE);  // Enable received "OUT" interrupt
 }
 
 static int _cmark;
@@ -506,9 +509,17 @@ bool SendDescriptor(USBSetup& setup)
 	return true;
 }
 
-//	Endpoint 0 interrupt
+//	Endpoint interrupt
 ISR(USB_COM_vect)
 {
+	SetEP(XINPUT_RX_ENDPOINT);  // Select XInput RX endpoint (OUT)
+	if (UEINTX & (1 << RXOUTI)) {  // If data received...
+		UEINTX &= ~(1 << RXOUTI);  // Clear interrupt flag
+		if (XInputUSB::RecvCallback != nullptr) {
+			XInputUSB::RecvCallback();  // Call callback function if it exists
+		}
+	}
+
     SetEP(0);
 	if (!ReceivedSetupInt())
 		return;
