@@ -31,7 +31,7 @@
 void (*XInputUSB::RecvCallback)(void) = nullptr;
 
 boolean XInputUSB::connected() {
-	return true;  // Need to implement
+	return USBDevice.configured();
 }
 
 int XInputUSB::available() {
