@@ -30,6 +30,23 @@ Restart the Arduino IDE. If the XInput AVR core is installed correctly, you shou
 
 To uninstall, delete the 'xinput' folder in the 'hardware' directory, and then restart the Arduino IDE.
 
+## Upload Warning and Instructions
+
+**!!!!!!! IMPORTANT !!!!!!!**
+
+Due to the nature of how the XInput USB mode works, Arduinos that have XInput sketches on them will ***not*** automatically reset when programmed by the IDE! You will need to reset the board by hand every time you upload new code.
+
+To upload to the board:
+* Connect the board via USB
+* Make sure the proper board is selected in the IDE
+* Hold the 'reset' button
+* Press 'Upload' in the IDE
+* Release the 'reset' button
+
+If you did these steps properly, the board should reset to the bootloader and the upload should begin. If your board does not have a 'reset' button, you can wire your own by connecting the 'reset' pin to ground.
+
+**Do *not* upload XInput sketches to your Arduino unless you know how to reset it!**
+
 ## Supported Boards
 
 * [Adafruit Circuit Playground 32u4](https://www.adafruit.com/product/3000)
