@@ -1,7 +1,35 @@
 # XInput USB Core for Arduino AVR
 
 The files in this repository allow you to emulate an Xbox gamepad (XInput) using a USB-capable Arduino microcontroller.
-	
+
+## Installation
+<pre>
+└───Arduino Installation
+	├───drivers
+	├───examples
+	├───hardware
+	│   ├───arduino
+	│   ├───tools
+	│   └───<b>xinput
+	│       └───avr
+	│           ├───bootloaders
+	│           ├───cores
+	│           ├───libraries
+	│           └───variants</b>
+	├───java
+	├───lib
+	├───libraries
+	├───reference
+	├───tools
+	└───tools-builder
+</pre>
+
+To install, download [the latest version](../../releases/latest) of this repository to your PC. Navigate to the directory containing your Arduino installation, and then open up the 'hardware' folder. Extract the contents of the .zip file into this directory. You should have a new 'xinput' folder with an 'avr' folder inside of it, containing the files from this repository (see the tree view above).
+
+Restart the Arduino IDE. If the XInput AVR core is installed correctly, you should see a new collection of "XInput AVR Boards" in the `Tools -> Boards` menu.
+
+To uninstall, delete the 'xinput' folder in the 'hardware' directory, and then restart the Arduino IDE.
+
 ## Supported Boards
 
 * [Adafruit Circuit Playground 32u4](https://www.adafruit.com/product/3000)
