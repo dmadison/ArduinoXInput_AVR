@@ -36,16 +36,24 @@ To uninstall, delete the 'xinput' folder in the 'hardware' directory, and then r
 
 Due to the nature of how the XInput USB mode works, Arduinos that have XInput sketches on them will ***not*** automatically reset when programmed by the IDE! You will need to reset the board by hand every time you upload new code.
 
+You can ignore this section if you're using an external programmer.
+
+### How to Upload
+
+Connect the board to your computer using a USB cable, and make sure you have the proper board selected in the IDE's 'boards' menu (with or without XInput). If the board already has an XInput sketch on it, you do *not* need to select a serial port. You should also turn on 'verbose output' for uploading in the Arduino IDE's preferences (`File -> Preferences`). This makes it easier to time the manual reset and see if the upload succeeded.
+
+Lastly, you need to know where the 'reset' button is on your Arduino. If your board does not have a 'reset' button, you can wire your own by momentarily connecting the 'reset' pin to ground.
+
 To upload to the board:
-* Connect the board via USB
-* Make sure the proper board is selected in the IDE
-* Hold the 'reset' button
-* Press 'Upload' in the IDE
-* Release the 'reset' button
+* Press the 'Upload' button in the IDE
+* Wait until the status bar says "Uploading..."
+* Press the reset button twice, quickly
 
-If you did these steps properly, the board should reset to the bootloader and the upload should begin. If your board does not have a 'reset' button, you can wire your own by connecting the 'reset' pin to ground.
+If you did these steps properly, the board should reset to the bootloader and the upload should begin. AVRDUDE will do its thing and you should see `avrdude done.  Thank you.` near the bottom of the output window.
 
-**Do *not* upload XInput sketches to your Arduino unless you know how to reset it!**
+Note that the IDE may say that it "Couldn't find a Board on the selected port" even if the upload succeeded. This is why it's important to turn on the verbose uploading output - look for the `avrdude` message.
+
+**Do *not* upload XInput sketches to your Arduino unless you know how to reset it!** Otherwise you will not be able to program it anymore and you'll have to [reflash the bootloader](https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all) with an external programmer.
 
 ## Supported Boards
 
