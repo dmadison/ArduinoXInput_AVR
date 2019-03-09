@@ -37,9 +37,9 @@ class XInputUSB {
 public:
 	// API
 	static bool connected(void);
-	static int  available(void);
-	static int  recv(void *buffer, uint8_t nbytes);
-	static int  send(const void *buffer, uint8_t nbytes);
+	static uint8_t available(void);
+	static int send(const void *buffer, uint8_t nbytes);
+	static int recv(void *buffer, uint8_t nbytes);
 	static void setRecvCallback(void(*callback)(void));
 
 	// Non-API Data
