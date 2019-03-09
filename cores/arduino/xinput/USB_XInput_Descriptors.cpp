@@ -79,7 +79,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x08,        // bMaxDataSize
 	0x00, 0x00,  // ???
 
-	// Endpoint 1: Control Data Out
+	// Endpoint 1: Control Surface Send
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x81,        // bEndpointAddress (IN, 1)
@@ -87,7 +87,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x20, 0x00,  // wMaxPacketSize
 	0x04,        // bInterval
 
-	// Endpoint 1: Control Data In
+	// Endpoint 1: Control Surface Receive
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x02,        // bEndpointAddress (OUT, 2)
@@ -124,7 +124,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x00,        // bMaxDataSize
 	0x00, 0x00, 0x00, 0x00, 0x00,  // ???
 
-	// Endpoint 2: Microphone Data Out
+	// Endpoint 2: Microphone Data Send
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x83,        // bEndpointAddress (IN, 3)
@@ -132,7 +132,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x20, 0x00,  // wMaxPacketSize
 	0x02,        // bInterval
 
-	// Endpoint 2: Headset Audio In
+	// Endpoint 2: Headset Audio Receive
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x04,        // bEndpointAddress (OUT, 4)
@@ -140,7 +140,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x20, 0x00,  // wMaxPacketSize
 	0x04,        // bInterval
 
-	// Endpoint 3: Unknown, Out
+	// Endpoint 3: Unknown, Send
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x85,        // bEndpointAddress (IN, 5)
@@ -148,7 +148,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x20, 0x00,  // wMaxPacketSize
 	0x40,        // bInterval
 
-	// Endpoint 3: Unknown, In
+	// Endpoint 3: Unknown, Receive
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x05,        // bEndpointAddress (OUT, 5)
@@ -176,7 +176,7 @@ const u8 USB_ConfigDescriptor[] = {
 	0x07,        // bMaxDataSize
 	0x00,        // ???
 
-	// Endpoint 4: Unknown, Out
+	// Endpoint 4: Unknown, Send
 	0x07,        // bLength
 	0x05,        // bDescriptorType (ENDPOINT)
 	0x86,        // bEndpointAddress (IN, 6)
