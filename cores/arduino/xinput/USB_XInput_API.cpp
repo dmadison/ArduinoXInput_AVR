@@ -34,7 +34,7 @@ boolean XInputUSB::connected() {
 	return USBDevice.configured();
 }
 
-int XInputUSB::available() {
+uint8_t XInputUSB::available() {
 	return USB_Available(XINPUT_RX_ENDPOINT);
 }
 
