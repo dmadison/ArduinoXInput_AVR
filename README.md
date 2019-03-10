@@ -71,6 +71,16 @@ Note that the IDE may say that it "Couldn't find a Board on the selected port" e
 
 Unfortunately boards such as the Uno, Nano, or Mega that do not have native USB support will *not* work.
 
+## Limitations
+
+### No Console Support
+
+This will *not* enable you to use your Arduino with an Xbox console! Genuine controllers use a dedicated hardware security chip that handshakes with the console. The Arduinos do not have this chip, and its security method has not been (openly) broken.
+
+### No Commercial Use
+
+These board definitions make use of Microsoft's VID and PID in order to latch on to the PC driver. As such this is strictly for educational or development use by non-commercial entities.
+
 ## License
 
 The Arduino core files are licensed under the terms of the [GNU Lesser General Public License (LGPL) version 2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html). Modifications are released under these same terms. See the [LICENSE](LICENSE.txt) file for more information.
