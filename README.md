@@ -2,6 +2,8 @@
 
 The files in this repository allow you to emulate an Xbox gamepad (XInput) using a USB-capable Arduino microcontroller.
 
+This is meant to be used in conjunction with the [ArduinoXInput library](https://github.com/dmadison/ArduinoXInput).
+
 ## Installation
 <pre>
 └───Arduino Installation
