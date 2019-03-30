@@ -45,52 +45,40 @@ install:
 
 script:
   # Arduino Yún w/ XInput
-  - BOARD=xinput:avr:yun
-  - buildSketch
+  - BOARD=xinput:avr:yun; buildSketch;
 
   # Arduino Leonardo w/ XInput
-  - BOARD=xinput:avr:leonardo
-  - buildSketch
+  - BOARD=xinput:avr:leonardo; buildSketch;
 
   # Arduino Arduino Leonardo ETH w/ XInput
-  - BOARD=xinput:avr:leonardoeth
-  - buildSketch
+  - BOARD=xinput:avr:leonardoeth; buildSketch;
 
   # Arduino/Genuino Micro w/ XInput
-  - BOARD=xinput:avr:micro
-  - buildSketch
+  - BOARD=xinput:avr:micro; buildSketch;
 
   # Arduino Esplora w/ XInput
-  - BOARD=xinput:avr:esplora
-  - buildSketch
+  - BOARD=xinput:avr:esplora; buildSketch;
 
   # LilyPad Arduino USB w/ XInput
-  - BOARD=xinput:avr:LilyPadUSB
-  - buildSketch
+  - BOARD=xinput:avr:LilyPadUSB; buildSketch;
 
   # Arduino Robot Control w/ XInput
-  - BOARD=xinput:avr:robotControl
-  - buildSketch
+  - BOARD=xinput:avr:robotControl; buildSketch;
 
   # Arduino Arduino Robot Motor w/ XInput
-  - BOARD=xinput:avr:robotMotor
-  - buildSketch
+  - BOARD=xinput:avr:robotMotor; buildSketch;
 
   # Adafruit Circuit Playground 32u4 w/Caterina Configuration w/ XInput
-  - BOARD=xinput:avr:circuitplay32u4cat
-  - buildSketch
+  - BOARD=xinput:avr:circuitplay32u4cat; buildSketch;
 
   # Arduino Yún Mini w/ XInput
-  - BOARD=xinput:avr:yunmini
-  - buildSketch
+  - BOARD=xinput:avr:yunmini; buildSketch;
 
   # Arduino Industrial 101 w/ XInput
-  - BOARD=xinput:avr:chiwawa
-  - buildSketch
+  - BOARD=xinput:avr:chiwawa; buildSketch;
 
   # Linino One w/ XInput
-  - BOARD=xinput:avr:one
-  - buildSketch
+  - BOARD=xinput:avr:one; buildSketch;
 
 notifications:
   email:
