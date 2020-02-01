@@ -120,7 +120,7 @@ leonardoeth.build.extra_flags={build.usb_flags}
 
 ##############################################################
 
-micro.name=Arduino/Genuino Micro w/ XInput
+micro.name=Arduino Micro w/ XInput
 
 micro.vid.0=0x2341
 micro.pid.0=0x0037
@@ -130,24 +130,10 @@ micro.vid.2=0x2A03
 micro.pid.2=0x0037
 micro.vid.3=0x2A03
 micro.pid.3=0x8037
-
 micro.vid.4=0x2341
 micro.pid.4=0x0237
-# If the board is a 2341:0237 use 2341:8237 for build and set
-# other parameters as well
-micro.vid.4.build.vid=0x045E
-micro.vid.4.build.pid=0x028E
-micro.vid.4.build.usb_product="Genuino Micro"
-micro.vid.4.bootloader.file=caterina/Caterina-Genuino-Micro.hex
-
 micro.vid.5=0x2341
 micro.pid.5=0x8237
-# If the board is a 2341:8237 use 2341:8237 for build and set
-# other paramters as well
-micro.vid.5.build.vid=0x045E
-micro.vid.5.build.pid=0x028E
-micro.vid.5.build.usb_product="Genuino Micro"
-micro.vid.5.bootloader.file=caterina/Caterina-Genuino-Micro.hex
 
 micro.upload.tool=avrdude
 micro.upload.protocol=avr109
@@ -382,7 +368,7 @@ yunmini.bootloader.tool=avrdude
 yunmini.bootloader.low_fuses=0xff
 yunmini.bootloader.high_fuses=0xd8
 yunmini.bootloader.extended_fuses=0xfb
-yunmini.bootloader.file=caterina/Caterina-Yunmini.hex
+yunmini.bootloader.file=caterina/Caterina-YunMini.hex
 yunmini.bootloader.unlock_bits=0x3F
 yunmini.bootloader.lock_bits=0x2F
 
