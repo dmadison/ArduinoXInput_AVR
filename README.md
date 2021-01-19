@@ -1,4 +1,4 @@
-# XInput USB Core for Arduino AVR
+# XInput USB Core for Arduino AVR  [![Build Status](https://github.com/dmadison/ArduinoXInput_AVR/workflows/build/badge.svg?branch=master)](https://github.com/dmadison/ArduinoXInput_AVR/actions?query=workflow%3Abuild)
 
 The files in this repository allow you to emulate an Xbox gamepad (XInput) using a USB-capable Arduino microcontroller. Originally forked from [the official Arduino AVR core](https://github.com/arduino/ArduinoCore-avr).
 
