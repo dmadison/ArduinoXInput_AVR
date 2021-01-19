@@ -1,0 +1,65 @@
+name: build
+
+on: [push, pull_request, workflow_dispatch]
+
+env:
+  IDE_VERSION: 1.8.13
+  IDE_LOCATION: /usr/local/share/arduino
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        compilation: ['Blank Sketch', 'USB API Demo', 'XInput Library']
+        include:
+          - compilation: 'Blank Sketch'
+            sketch: "$IDE_LOCATION/examples/01.Basics/BareMinimum/BareMinimum.ino"
+          - compilation: 'USB API Demo'
+            sketch: "$IDE_LOCATION/libraries/ArduinoXInput/extras/API-Demo/API-Demo.ino"
+          - compilation: 'XInput Library'
+            sketch: "$IDE_LOCATION/libraries/ArduinoXInput/examples/GamepadPins/GamepadPins.ino"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Arduino IDE
+        run: |
+          wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
+          tar xf arduino-$IDE_VERSION-linux64.tar.xz
+          sudo mv arduino-$IDE_VERSION /usr/local/share/arduino
+          sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+          rm arduino-$IDE_VERSION-linux64.tar.xz
+
+      - name: Move XInput AVR Boards Files
+        run: |
+          mkdir $IDE_LOCATION/hardware/xinput
+          ln -s $PWD $IDE_LOCATION/hardware/xinput/avr
+
+      - name: Install XInput Library
+        if: contains(matrix.sketch, 'ArduinoXInput')
+        run: |
+          git clone https://github.com/dmadison/ArduinoXInput.git;
+          sudo mv ArduinoXInput $IDE_LOCATION/libraries;
+
+      - name: Build All Boards
+        run: |
+          buildSketch() {
+            echo -e "\nBuilding sketch ${{ matrix.sketch }} for $BOARD";
+            arduino --verify --board $BOARD ${{ matrix.sketch }};
+          }
+
+          BOARD=xinput:avr:yun; buildSketch;
+          BOARD=xinput:avr:leonardo; buildSketch;
+          BOARD=xinput:avr:leonardoeth; buildSketch;
+          BOARD=xinput:avr:micro; buildSketch;
+          BOARD=xinput:avr:esplora; buildSketch;
+          BOARD=xinput:avr:LilyPadUSB; buildSketch
+          BOARD=xinput:avr:robotControl; buildSketch;
+          BOARD=xinput:avr:robotMotor; buildSketch;
+          BOARD=xinput:avr:circuitplay32u4cat; buildSketch;
+          BOARD=xinput:avr:yunmini; buildSketch;
+          BOARD=xinput:avr:chiwawa; buildSketch;
+          BOARD=xinput:avr:one; buildSketch;
