@@ -409,7 +409,7 @@ robotMotor.build.extra_flags={build.usb_flags}
 ##############################################################
 
 # Adafruit Circuit Playground 32u4 w/Caterina Configuration w/ XInput
-circuitplay32u4cat.name=Adafruit Circuit Playground
+circuitplay32u4cat.name=Adafruit Circuit Playground 32u4 w/ XInput
 circuitplay32u4cat.bootloader.low_fuses=0xff
 circuitplay32u4cat.bootloader.high_fuses=0xd8
 circuitplay32u4cat.bootloader.extended_fuses=0xcb
