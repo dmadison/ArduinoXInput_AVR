@@ -47,7 +47,7 @@ Lastly, you need to know where the 'reset' button is on your Arduino. If your bo
 To upload to the board:
 * Press the 'Upload' button in the IDE
 * Wait until the status bar says "Uploading..."
-* Press the reset button
+* Press the reset button twice, quickly
 
 If you timed it properly, the board should reset to the bootloader and the upload should begin. AVRDUDE will do its thing and you should see `avrdude done.  Thank you.` near the bottom of the output window.
 
