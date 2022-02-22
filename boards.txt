@@ -1,4 +1,4 @@
-# See: http://code.google.com/p/arduino/wiki/Platforms
+# See: https://arduino.github.io/arduino-cli/latest/platform-specification/
 
 menu.cpu=Processor
 
@@ -15,8 +15,19 @@ yun.vid.2=0x2A03
 yun.pid.2=0x0041
 yun.vid.3=0x2A03
 yun.pid.3=0x8041
+yun.upload_port.0.vid=0x2341
+yun.upload_port.0.pid=0x0041
+yun.upload_port.1.vid=0x2341
+yun.upload_port.1.pid=0x8041
+yun.upload_port.2.vid=0x2A03
+yun.upload_port.2.pid=0x0041
+yun.upload_port.3.vid=0x2A03
+yun.upload_port.3.pid=0x8041
+yun.upload_port.4.board=yun
 
 yun.upload.tool=avrdude
+yun.upload.tool.default=avrdude
+yun.upload.tool.network=arduino_ota
 yun.upload.protocol=avr109
 yun.upload.maximum_size=28672
 yun.upload.maximum_data_size=2560
@@ -26,6 +37,7 @@ yun.upload.use_1200bps_touch=true
 yun.upload.wait_for_upload_port=true
 
 yun.bootloader.tool=avrdude
+yun.bootloader.tool.default=avrdude
 yun.bootloader.low_fuses=0xff
 yun.bootloader.high_fuses=0xd8
 yun.bootloader.extended_fuses=0xfb
@@ -55,8 +67,19 @@ leonardo.vid.2=0x2A03
 leonardo.pid.2=0x0036
 leonardo.vid.3=0x2A03
 leonardo.pid.3=0x8036
+leonardo.upload_port.0.vid=0x2341
+leonardo.upload_port.0.pid=0x0036
+leonardo.upload_port.1.vid=0x2341
+leonardo.upload_port.1.pid=0x8036
+leonardo.upload_port.2.vid=0x2A03
+leonardo.upload_port.2.pid=0x0036
+leonardo.upload_port.3.vid=0x2A03
+leonardo.upload_port.3.pid=0x8036
+leonardo.upload_port.4.board=leonardo
 
 leonardo.upload.tool=avrdude
+leonardo.upload.tool.default=avrdude
+leonardo.upload.tool.network=arduino_ota
 leonardo.upload.protocol=avr109
 leonardo.upload.maximum_size=28672
 leonardo.upload.maximum_data_size=2560
@@ -66,6 +89,7 @@ leonardo.upload.use_1200bps_touch=true
 leonardo.upload.wait_for_upload_port=true
 
 leonardo.bootloader.tool=avrdude
+leonardo.bootloader.tool.default=avrdude
 leonardo.bootloader.low_fuses=0xff
 leonardo.bootloader.high_fuses=0xd8
 leonardo.bootloader.extended_fuses=0xcb
@@ -90,8 +114,15 @@ leonardoeth.vid.0=0x2a03
 leonardoeth.pid.0=0x0040
 leonardoeth.vid.1=0x2a03
 leonardoeth.pid.1=0x8040
+leonardoeth.upload_port.0.vid=0x2a03
+leonardoeth.upload_port.0.pid=0x0040
+leonardoeth.upload_port.1.vid=0x2a03
+leonardoeth.upload_port.1.pid=0x8040
+leonardoeth.upload_port.2.board=leonardoeth
 
 leonardoeth.upload.tool=avrdude
+leonardoeth.upload.tool.default=avrdude
+leonardoeth.upload.tool.network=arduino_ota
 leonardoeth.upload.protocol=avr109
 leonardoeth.upload.maximum_size=28672
 leonardoeth.upload.maximum_data_size=2560
@@ -101,6 +132,7 @@ leonardoeth.upload.use_1200bps_touch=true
 leonardoeth.upload.wait_for_upload_port=true
 
 leonardoeth.bootloader.tool=avrdude
+leonardoeth.bootloader.tool.default=avrdude
 leonardoeth.bootloader.low_fuses=0xff
 leonardoeth.bootloader.high_fuses=0xd8
 leonardoeth.bootloader.extended_fuses=0xcb
@@ -134,8 +166,23 @@ micro.vid.4=0x2341
 micro.pid.4=0x0237
 micro.vid.5=0x2341
 micro.pid.5=0x8237
+micro.upload_port.0.vid=0x2341
+micro.upload_port.0.pid=0x0037
+micro.upload_port.1.vid=0x2341
+micro.upload_port.1.pid=0x8037
+micro.upload_port.2.vid=0x2A03
+micro.upload_port.2.pid=0x0037
+micro.upload_port.3.vid=0x2A03
+micro.upload_port.3.pid=0x8037
+micro.upload_port.4.vid=0x2341
+micro.upload_port.4.pid=0x0237
+micro.upload_port.5.vid=0x2341
+micro.upload_port.5.pid=0x8237
+micro.upload_port.6.board=micro
 
 micro.upload.tool=avrdude
+micro.upload.tool.default=avrdude
+micro.upload.tool.network=arduino_ota
 micro.upload.protocol=avr109
 micro.upload.maximum_size=28672
 micro.upload.maximum_data_size=2560
@@ -145,6 +192,7 @@ micro.upload.use_1200bps_touch=true
 micro.upload.wait_for_upload_port=true
 
 micro.bootloader.tool=avrdude
+micro.bootloader.tool.default=avrdude
 micro.bootloader.low_fuses=0xff
 micro.bootloader.high_fuses=0xd8
 micro.bootloader.extended_fuses=0xcb
@@ -173,8 +221,19 @@ esplora.vid.2=0x2A03
 esplora.pid.2=0x003C
 esplora.vid.3=0x2A03
 esplora.pid.3=0x803C
+esplora.upload_port.0.vid=0x2341
+esplora.upload_port.0.pid=0x003C
+esplora.upload_port.1.vid=0x2341
+esplora.upload_port.1.pid=0x803C
+esplora.upload_port.2.vid=0x2A03
+esplora.upload_port.2.pid=0x003C
+esplora.upload_port.3.vid=0x2A03
+esplora.upload_port.3.pid=0x803C
+esplora.upload_port.4.board=esplora
 
 esplora.upload.tool=avrdude
+esplora.upload.tool.default=avrdude
+esplora.upload.tool.network=arduino_ota
 esplora.upload.protocol=avr109
 esplora.upload.maximum_size=28672
 esplora.upload.maximum_data_size=2560
@@ -184,6 +243,7 @@ esplora.upload.use_1200bps_touch=true
 esplora.upload.wait_for_upload_port=true
 
 esplora.bootloader.tool=avrdude
+esplora.bootloader.tool.default=avrdude
 esplora.bootloader.low_fuses=0xff
 esplora.bootloader.high_fuses=0xd8
 esplora.bootloader.extended_fuses=0xcb
@@ -208,8 +268,15 @@ LilyPadUSB.vid.0=0x1B4F
 LilyPadUSB.pid.0=0x9207
 LilyPadUSB.vid.1=0x1B4F
 LilyPadUSB.pid.1=0x9208
+LilyPadUSB.upload_port.0.vid=0x1B4F
+LilyPadUSB.upload_port.0.pid=0x9207
+LilyPadUSB.upload_port.1.vid=0x1B4F
+LilyPadUSB.upload_port.1.pid=0x9208
+LilyPadUSB.upload_port.2.board=LilyPadUSB
 
 LilyPadUSB.upload.tool=avrdude
+LilyPadUSB.upload.tool.default=avrdude
+LilyPadUSB.upload.tool.network=arduino_ota
 LilyPadUSB.upload.protocol=avr109
 LilyPadUSB.upload.maximum_size=28672
 LilyPadUSB.upload.maximum_data_size=2560
@@ -219,6 +286,7 @@ LilyPadUSB.upload.use_1200bps_touch=true
 LilyPadUSB.upload.wait_for_upload_port=true
 
 LilyPadUSB.bootloader.tool=avrdude
+LilyPadUSB.bootloader.tool.default=avrdude
 LilyPadUSB.bootloader.low_fuses=0xff
 LilyPadUSB.bootloader.high_fuses=0xd8
 LilyPadUSB.bootloader.extended_fuses=0xce
@@ -247,8 +315,19 @@ robotControl.vid.2=0x2A03
 robotControl.pid.2=0x0038
 robotControl.vid.3=0x2A03
 robotControl.pid.3=0x8038
+robotControl.upload_port.0.vid=0x2341
+robotControl.upload_port.0.pid=0x0038
+robotControl.upload_port.1.vid=0x2341
+robotControl.upload_port.1.pid=0x8038
+robotControl.upload_port.2.vid=0x2A03
+robotControl.upload_port.2.pid=0x0038
+robotControl.upload_port.3.vid=0x2A03
+robotControl.upload_port.3.pid=0x8038
+robotControl.upload_port.4.board=robotControl
 
 robotControl.upload.tool=avrdude
+robotControl.upload.tool.default=avrdude
+robotControl.upload.tool.network=arduino_ota
 robotControl.upload.protocol=avr109
 robotControl.upload.maximum_size=28672
 robotControl.upload.maximum_data_size=2560
@@ -258,6 +337,7 @@ robotControl.upload.use_1200bps_touch=true
 robotControl.upload.wait_for_upload_port=true
 
 robotControl.bootloader.tool=avrdude
+robotControl.bootloader.tool.default=avrdude
 robotControl.bootloader.low_fuses=0xff
 robotControl.bootloader.high_fuses=0xd8
 robotControl.bootloader.extended_fuses=0xcb
@@ -286,8 +366,19 @@ robotMotor.vid.2=0x2A03
 robotMotor.pid.2=0x0039
 robotMotor.vid.3=0x2A03
 robotMotor.pid.3=0x8039
+robotMotor.upload_port.0.vid=0x2341
+robotMotor.upload_port.0.pid=0x0039
+robotMotor.upload_port.1.vid=0x2341
+robotMotor.upload_port.1.pid=0x8039
+robotMotor.upload_port.2.vid=0x2A03
+robotMotor.upload_port.2.pid=0x0039
+robotMotor.upload_port.3.vid=0x2A03
+robotMotor.upload_port.3.pid=0x8039
+robotMotor.upload_port.4.board=robotMotor
 
 robotMotor.upload.tool=avrdude
+robotMotor.upload.tool.default=avrdude
+robotMotor.upload.tool.network=arduino_ota
 robotMotor.upload.protocol=avr109
 robotMotor.upload.maximum_size=28672
 robotMotor.upload.maximum_data_size=2560
@@ -297,6 +388,7 @@ robotMotor.upload.use_1200bps_touch=true
 robotMotor.upload.wait_for_upload_port=true
 
 robotMotor.bootloader.tool=avrdude
+robotMotor.bootloader.tool.default=avrdude
 robotMotor.bootloader.low_fuses=0xff
 robotMotor.bootloader.high_fuses=0xd8
 robotMotor.bootloader.extended_fuses=0xcb
@@ -317,7 +409,7 @@ robotMotor.build.extra_flags={build.usb_flags}
 ##############################################################
 
 # Adafruit Circuit Playground 32u4 w/Caterina Configuration w/ XInput
-circuitplay32u4cat.name=Adafruit Circuit Playground
+circuitplay32u4cat.name=Adafruit Circuit Playground 32u4 w/ XInput
 circuitplay32u4cat.bootloader.low_fuses=0xff
 circuitplay32u4cat.bootloader.high_fuses=0xd8
 circuitplay32u4cat.bootloader.extended_fuses=0xcb
@@ -325,6 +417,7 @@ circuitplay32u4cat.bootloader.file=caterina/Caterina-Circuitplay32u4.hex
 circuitplay32u4cat.bootloader.unlock_bits=0x3F
 circuitplay32u4cat.bootloader.lock_bits=0x2F
 circuitplay32u4cat.bootloader.tool=avrdude
+circuitplay32u4cat.bootloader.tool.default=avrdude
 circuitplay32u4cat.build.mcu=atmega32u4
 circuitplay32u4cat.build.f_cpu=8000000L
 circuitplay32u4cat.build.vid=0x045E
@@ -342,8 +435,13 @@ circuitplay32u4cat.upload.disable_flushing=true
 circuitplay32u4cat.upload.use_1200bps_touch=true
 circuitplay32u4cat.upload.wait_for_upload_port=true
 circuitplay32u4cat.upload.tool=avrdude
+circuitplay32u4cat.upload.tool.default=avrdude
+circuitplay32u4cat.upload.tool.network=arduino_ota
 circuitplay32u4cat.vid.0=0x239A
 circuitplay32u4cat.pid.0=0x8011
+circuitplay32u4cat.upload_port.0.vid=0x239A
+circuitplay32u4cat.upload_port.0.pid=0x8011
+circuitplay32u4cat.upload_port.1.board=circuitplay32u4cat
 
 ##############################################################
 
@@ -354,8 +452,15 @@ yunmini.vid.0=0x2a03
 yunmini.pid.0=0x0050
 yunmini.vid.1=0x2a03
 yunmini.pid.1=0x8050
+yunmini.upload_port.0.vid=0x2a03
+yunmini.upload_port.0.pid=0x0050
+yunmini.upload_port.1.vid=0x2a03
+yunmini.upload_port.1.pid=0x8050
+yunmini.upload_port.2.board=yunmini
 
 yunmini.upload.tool=avrdude
+yunmini.upload.tool.default=avrdude
+yunmini.upload.tool.network=arduino_ota
 yunmini.upload.protocol=avr109
 yunmini.upload.maximum_size=28672
 yunmini.upload.maximum_data_size=2560
@@ -365,6 +470,7 @@ yunmini.upload.use_1200bps_touch=true
 yunmini.upload.wait_for_upload_port=true
 
 yunmini.bootloader.tool=avrdude
+yunmini.bootloader.tool.default=avrdude
 yunmini.bootloader.low_fuses=0xff
 yunmini.bootloader.high_fuses=0xd8
 yunmini.bootloader.extended_fuses=0xfb
@@ -391,8 +497,15 @@ chiwawa.vid.0=0x2a03
 chiwawa.pid.0=0x0056
 chiwawa.vid.1=0x2a03
 chiwawa.pid.1=0x8056
+chiwawa.upload_port.0.vid=0x2a03
+chiwawa.upload_port.0.pid=0x0056
+chiwawa.upload_port.1.vid=0x2a03
+chiwawa.upload_port.1.pid=0x8056
+chiwawa.upload_port.2.board=chiwawa
 
 chiwawa.upload.tool=avrdude
+chiwawa.upload.tool.default=avrdude
+chiwawa.upload.tool.network=arduino_ota
 chiwawa.upload.protocol=avr109
 chiwawa.upload.maximum_size=28672
 chiwawa.upload.maximum_data_size=2560
@@ -402,6 +515,7 @@ chiwawa.upload.use_1200bps_touch=true
 chiwawa.upload.wait_for_upload_port=true
 
 chiwawa.bootloader.tool=avrdude
+chiwawa.bootloader.tool.default=avrdude
 chiwawa.bootloader.low_fuses=0xff
 chiwawa.bootloader.high_fuses=0xd8
 chiwawa.bootloader.extended_fuses=0xfb
@@ -428,8 +542,15 @@ one.vid.0=0x2a03
 one.pid.0=0x0001
 one.vid.1=0x2a03
 one.pid.1=0x8001
+one.upload_port.0.vid=0x2a03
+one.upload_port.0.pid=0x0001
+one.upload_port.1.vid=0x2a03
+one.upload_port.1.pid=0x8001
+one.upload_port.2.board=one
 
 one.upload.tool=avrdude
+one.upload.tool.default=avrdude
+one.upload.tool.network=arduino_ota
 one.upload.protocol=avr109
 one.upload.maximum_size=28672
 one.upload.maximum_data_size=2560
@@ -439,6 +560,7 @@ one.upload.use_1200bps_touch=true
 one.upload.wait_for_upload_port=true
 
 one.bootloader.tool=avrdude
+one.bootloader.tool.default=avrdude
 one.bootloader.low_fuses=0xff
 one.bootloader.high_fuses=0xd8
 one.bootloader.extended_fuses=0xfb

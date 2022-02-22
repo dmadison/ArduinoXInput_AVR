@@ -3,7 +3,7 @@ name: build
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  IDE_VERSION: 1.8.13
+  IDE_VERSION: 1.8.19
   IDE_LOCATION: /usr/local/share/arduino
 
 jobs:
