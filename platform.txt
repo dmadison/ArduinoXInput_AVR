@@ -6,7 +6,7 @@
 # https://arduino.github.io/arduino-cli/latest/platform-specification/
 
 name=XInput AVR Boards
-version=1.0.4
+version=1.0.5
 
 # AVR compile variables
 # ---------------------
