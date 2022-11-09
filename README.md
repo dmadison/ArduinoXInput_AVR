@@ -1,36 +1,47 @@
-# XInput USB Core for Arduino AVR [![Build Status](https://github.com/dmadison/ArduinoXInput_AVR/workflows/build/badge.svg?branch=master)](https://github.com/dmadison/ArduinoXInput_AVR/actions?query=workflow%3Abuild)
+# XInput USB Core for Arduino AVR
+[![Build Status](https://github.com/dmadison/ArduinoXInput_AVR/workflows/build/badge.svg?branch=master)](https://github.com/dmadison/ArduinoXInput_AVR/actions?query=workflow%3Abuild)
 
 The files in this repository allow you to emulate an Xbox gamepad (XInput) using a USB-capable Arduino microcontroller. Originally forked from [the official Arduino AVR core](https://github.com/arduino/ArduinoCore-avr).
 
 This is meant to be used in conjunction with the [ArduinoXInput library](https://github.com/dmadison/ArduinoXInput).
 
-## Installation
+## Automated Installation
+
+Follow the official instructions for [adding third party boards](https://support.arduino.cc/hc/en-us/articles/360016466340-Add-or-remove-third-party-boards-in-Boards-Manager) and [adding boards to the Arduino IDE](https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE).
+
+Add the following line to the "Additional Boards Manager URLs" list:
+```
+https://raw.githubusercontent.com/dmadison/ArduinoXInput_Boards/master/package_dmadison_xinput_index.json
+```
+
+If you've done this correctly, the XInput boards packages will be available within the Boards Manager. Install the "XInput AVR Boards" package to add these boards to the IDE.
+
+## Manual Installation
 <pre>
-└───Arduino Installation
-	├───drivers
-	├───examples
-	├───hardware
-	│   ├───arduino
-	│   ├───tools
-	│   └───<b>xinput
-	│       └───avr
-	│           ├───bootloaders
-	│           ├───cores
-	│           ├───libraries
-	│           └───variants</b>
-	├───java
-	├───lib
-	├───libraries
-	├───reference
-	├───tools
-	└───tools-builder
+└───Arduino App Data Folder
+    ├───cache
+    ├───logs
+    ├───staging
+    └───packages
+        ├───arduino
+        └───<b>xinput
+            └───hardware
+                └───avr
+                    └───{version}
+                        ├───bootloaders
+                        ├───cores
+                        ├───drivers
+                        ├───libraries
+                        └───variants</b>
 </pre>
 
-To install, [download the latest release](../../releases/latest) to your PC and navigate to the directory containing your Arduino installation. Open up the 'hardware' folder and extract the contents of the .zip file into this directory. You should have a new 'xinput' folder with an 'avr' folder inside of it containing the files from this repository. This should match the tree view above. If you clone the repository, you must create these parent folders yourself.
+To install manually you will need to find the Arduino IDE's application data folder. On Windows this is located in `%APPDATA%\..\Local\Arduino15`.
 
-After you have copied the files restart the Arduino IDE. If the XInput AVR core is installed correctly, you should see a new collection of "XInput AVR Boards" in the `Tools -> Boards` menu.
+You will need to create the necessary folders in the "packages" directory: `xinput/hardware/avr/{version}`, where `{version}` is the current [semantic version number](https://en.wikipedia.org/wiki/Software_versioning) of the repository (e.g. "1.0.0"). The repository should then be cloned into this folder. See the tree view above for reference.
 
-To uninstall, delete the 'xinput' folder in the 'hardware' directory, and then restart the Arduino IDE.
+After you have copied the files, restart the Arduino IDE. If the XInput AVR core is installed correctly, you should see a new collection of "XInput AVR Boards" in the `Tools -> Boards` menu.
+
+To uninstall, delete the 'xinput' folder and then restart the Arduino IDE.
 
 ## Upload Warning and Instructions
 
